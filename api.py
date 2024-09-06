@@ -9,5 +9,11 @@ def api():
     
     return jsonify({'message': 'Hello, World!'})
 
+@app.route('/datos', methods=['POST'])
+def datos():
+    data = request.json
+    print(data)
+    return jsonify(data), 200
+
 if __name__ == '__main__':
     app.run(debug=True)
